@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/FS-AI-Symbol.svg">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+    <!-- <link href="assets/css/theme.css" rel="stylesheet" type="text/css" /> -->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+    <!-- third party css -->
+    <link href="assets/libs/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
+
+    <link href="assets/css/updated.css" rel="stylesheet" type="text/css" />
+
+    <!-- icons -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "primary", "size": "condensed", "showuser": false}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": false}'>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+                <ul class="list-unstyled topnav-menu float-end mb-0">
+
+                    <li class="dropdown d-none d-lg-inline-block">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="fullscreen" href="#">
+                            <i data-feather="maximize"></i>
+                        </a>
+                    </li>
+
+                    <li class="dropdown notification-list topbar-dropdown">
+                        <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <img src="assets/images/defaultUser.png" alt="user-image" class="rounded-circle">
+                            <span class="pro-user-name ms-1">
+                                Username <i class="uil uil-angle-down"></i> 
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                            <a href="index.html" class="dropdown-item notify-item">
+                                <i data-feather="log-out" class="icon-dual icon-xs me-1"></i><span>Logout</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!-- LOGO -->
+                <div class="logo-box r-rounded">
+                    <a href="dashboard.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="assets/images/FS-AI-Symbol.svg" alt="" height="35">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/FS-AI-k.svg" alt="" height="35">
+                        </span>
+                    </a>
+
+                    <a href="dashboard.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="assets/images/FS-AI-Symbol.svg" alt="" height="35">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/FS-AI-k.svg" alt="" height="35">
+                        </span>
+                    </a>
+                </div>
+
+                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                    <li>
+                        <button class="button-menu-mobile">
+                            <i data-feather="menu"></i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <!-- Mobile menu toggle (Horizontal Layout)-->
+                        <a class="navbar-toggle nav-link" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- end Topbar -->
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu r-rounded">
+
+            <div class="h-100" data-simplebar>
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul id="side-menu">
+
+                        <li>
+                            <a href="dashboard.html">
+                                <i class="uil uil-home" style="font-size: small;"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title">Dashboard</h4>                                
+                            </div>
+                        </div>
+                    </div>     
+                    <!-- end page title -->  
+
+                    <!-- Flex Tabs -->
+                    <!-- stats with icon -->
+                    <div class="row">
+                        <div class="col-md-12 col-xl-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column">
+                                        <h4 class="header-title mt-0 mb-0">Select path to upload the data</h4>
+                                        <hr />
+                                        <div class="mb-3 row">
+                                            <label class="col-auto col-form-label" for="example-fileinput">Training data</label>
+                                            <div class="col-lg-6 col-md-8">
+                                                <input type="text" class="form-control" id="training-fileinput" placeholder="Please enter Training data location" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-auto col-form-label" for="example-fileinput">Testing data</label>
+                                            <div class="col-lg-6 col-md-8">
+                                                <input type="test" class="form-control" id="target-fileinput" placeholder="Please enter Testing data location" />
+                                            </div>
+                                        </div>
+                                        <div class="clearfix text-start mt-2">
+                                            <button type="button" class="btn btn-danger"> <i class="uil uil-arrow-right me-1"></i> Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Classification result -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body p-2">
+                                    <div class="d-flex flex-column">
+                                        <h4 class="header-title mt-0 mb-1">Classification Result</h4>
+                                        <p></p>
+                                    </div>
+                                    <table id="result-table" class="table table-sm table-striped table-bordered nowrap w-100 compact">
+                                        <thead class="table-dark-heading">
+                                            <tr>
+                                                <th>#</th>                                                
+                                                <th>Image</th>                                                
+                                                <th>Confidence Interval</th>                                                
+                                                <th>Accuracy (%)</th>                                                
+                                                <th>Action</th>                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <img class="img-thumbs" src="assets/images/test_data/Defect_image/2019-01-24-16-26-57-732-367.jpg" />
+                                                </td>
+                                                <td>
+                                                    <i class="uil uil-thumbs-up text-green"></i> Perfect Image
+                                                </td>
+                                                <td>95.01</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    <img class="img-thumbs" src="assets/images/test_data/Defect_image/2019-01-24-16-40-46-615-543.jpg" />
+                                                </td>
+                                                <td>
+                                                    <i class="uil uil-thumbs-down text-red"></i> Defect Image
+                                                </td>
+                                                <td>97</td>
+                                                <td>-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End: Classification result -->
+
+                   <!-- end row -->
+                    
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <script>document.write(new Date().getFullYear())</script> &copy; Findability Sciences Inc.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Right Sidebar : Dictionary -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+
+            <h6 class="fw-medium px-3 m-0 py-2 text-uppercase bg-light">
+                <a href="data-dictionary.html" class="p-0 pt-1 float-end">View <i class="uil uil-angle-double-right ms-1"></i></a>
+                <span class="d-block py-1">Data Dictionary</span>
+            </h6>
+
+            <div class="py-1 px-3 data-dict-set">
+                <h6 class="fw-bold mt-3 mb-2 pb-1">AH-HOU_ PROD_TOTAL</h6>
+                <p class="mb-1">Production total of AH-HOU class</p>
+                <a href="#" target="_blank">Source: PSI Report</a>
+                <hr />
+                <h6 class="fw-bold mt-3 mb-2 pb-1">AH-HOU_ INVTY_TOTAL</h6>
+                <p class="mb-1">Inventory total of AH-HOU class</p>
+                <a href="#" target="_blank">Source: PSI Report</a>
+                <hr />
+                <h6 class="fw-bold mt-3 mb-2 pb-1">Total_CPI</h6>
+                <p class="mb-1">Total Consumer Price Index (CPI) is a measure that examines the weighted average of prices of a basket of consumer goods and services, such as transportation, food, and medical care. It is calculated by taking price changes for each item in the predetermined basket of goods and averaging them.</p>
+                <a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank">Source</a>
+                <hr />
+                <h6 class="fw-bold mt-3 mb-2 pb-1">CPI_(less_energy)</h6>
+                <p class="mb-1">The "Consumer Price Index for All Urban Consumers: All Items Less Food & Energy" is an aggregate of prices paid by urban consumers for a typical basket of goods, excluding food and energy. This measurement, known as "Core CPI," is widely used by economists because food and energy have very volatile prices.</p>
+                <a href="https://fred.stlouisfed.org/series/CPILFESL" target="_blank">Source</a>
+                <hr />
+                <h6 class="fw-bold mt-3 mb-2 pb-1">Non_Farm_Employment_(MM)</h6>
+                <p class="mb-1">The measure of the number of workers in the U.S. excluding farm workers</p>
+                <a href="https://www.bls.gov/regions/mid-atlantic/data/xg-tables/ro3fx9584.htm" target="_blank">Source</a>
+                <hr />
+                <h6 class="fw-bold mt-3 mb-2 pb-1">US_Total</h6>
+                <p class="mb-1">It is construction data of total Housing starts in the U.S.</p>
+                <a href="https://www.nahb.org/-/media/NAHB/news-and-economics/docs/housing-economics/starts-and-permits/housing-starts.pdf" target="_blank">Source</a>
+                <hr />
+                <!-- Add more dictionary here -->
+
+            </div>
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- ============================================================== -->
+    <!-- Modal Boxes -->
+    <!-- ============================================================== -->
+    <!-- History -->
+    <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" >
+        <div class="modal-dialog" role="document" style="max-width:750px">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="">Modal Title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Data -->
+              <p>Add text/content here</p>
+              <!-- End: Data --> 
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- optional plugins -->
+    <script src="assets/libs/moment/min/moment.min.js"></script>
+
+    <!-- third party js -->
+    <script src="assets/libs/daterangepicker/daterangepicker.min.js"></script>
+    <!-- third party js ends -->
+
+    <!-- Highcharts -->
+    <!-- <script src="assets/libs/highcharts/highcharts.js"></script> -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script> -->
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="assets/js/dashboardv2.js"></script>
+
+    <script>
+        // $(document).ready(function(){ 
+        //     $('#top10Overall-datatable').DataTable({
+        //         "language": {
+        //             "paginate": {
+        //                 "previous": "<i class='uil uil-angle-left'>",
+        //                 "next": "<i class='uil uil-angle-right'>"
+        //             }
+        //         },
+        //         "aaSorting": [],
+        //         "pageLength": 10,
+        //         "drawCallback": function () {
+        //             $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+        //         }
+        //     });
+        // })
+    </script>
+    
+</body>
+</html>
